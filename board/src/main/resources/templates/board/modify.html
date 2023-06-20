@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시물 수정</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/css.css}">
+</head>
+<body>
+<div class="layout">
+  <div class="board_title">
+    <strong>게시물 수정</strong>
+  </div>
+  <form th:action="@{/board/update/{id}(id = ${board.id})}" method="post">
+    <input name="title" type="text" th:value="${board.title}"> <br>
+    <textarea name="content" th:text="${board.content}" th:value="${board.content}"></textarea> <br>
+    <button type="submit">수정</button>
+  </form>
+  <button onclick="history.back()">취소</button>
+</div>
+
+</body>
+</html>
